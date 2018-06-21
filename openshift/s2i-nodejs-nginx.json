@@ -23,6 +23,9 @@
         "from": {
           "kind": "ImageStreamTag",
           "name": "9"
+        },
+        "referencePolicy": {
+          "type": "Local"
         }
       },
       {
@@ -39,6 +42,9 @@
         "from": {
           "kind": "DockerImage",
           "name": "docker.io/zhangbing3/s2i-nodejs-nginx:latest"
+        },
+        "referencePolicy": {
+          "type": "Local"
         }
       }
     ]
