@@ -13,7 +13,7 @@
         "name": "latest",
         "annotations": {
           "openshift.io/display-name": "s2i-nodejs-nginx (Latest)",
-          "openshift.io/provider-display-name": "Red Hat, Inc.",
+          "openshift.io/provider-display-name": "zhangbing3",
           "description": "Build vue or react project and run nginx applications on CentOS 7. For more information about using this builder image, including OpenShift considerations. WARNING: By selecting this tag, your application will automatically update to use the latest version of Node.js available on OpenShift, including major versions updates.",
           "iconClass": "icon-nodejs",
           "tags": "builder,vue,nginx,s2i",
@@ -32,7 +32,7 @@
         "name": "9",
         "annotations": {
           "openshift.io/display-name": "s2i-nodejs-nginx 9",
-          "openshift.io/provider-display-name": "Red Hat, Inc.",
+          "openshift.io/provider-display-name": "zhangbing3",
           "description": "Build  vue or react project and run nginx applications on CentOS 7. For more information about using this builder image, including OpenShift considerations.",
           "iconClass": "icon-nodejs",
           "tags": "builder,nodejs",
