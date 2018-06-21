@@ -1,0 +1,15 @@
+#!/bin/bash -e
+#
+# S2I run script for the 'react-nginx-front-end-builder' image.
+# The run script executes the server that runs your application.
+#
+# For more information see the documentation:
+#	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
+#
+
+# We will turn off daemonizing for the nginx process so that the container
+# doesn't exit after the process runs.
+echo "---> Start nginx..."
+sed -i "s%API_HOST%$API_HOST%g" /etc/nginx/nginx.conf
+sed -i "s%API_URL%$API_URL%g" /etc/nginx/nginx.conf
+exec nginx -g "daemon off;"

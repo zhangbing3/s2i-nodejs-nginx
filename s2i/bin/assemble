@@ -1,0 +1,41 @@
+#!/bin/bash -e
+#
+# S2I assemble script for the 'react-nginx-front-end-builder' image.
+# The 'assemble' script builds your application source so that it is ready to run.
+#
+# For more information refer to the documentation:
+#	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
+#
+
+# If the 's2i-vue-nginx' assemble script is executed with the '-h' flag, print the usage.
+if [[ "$1" == "-h" ]]; then
+	exec /usr/libexec/s2i/usage
+fi
+
+# Restore artifacts from the previous build (if they exist).
+#
+if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
+  echo "---> Restoring build artifacts..."
+  mv /tmp/artifacts/. ./
+fi
+
+echo "---> Installing application source..."
+cp -Rf /tmp/src/. ./
+if [ -n $FRONT_DOMAIN ]; then
+	echo "---> replace front-end domain ..."
+	sed -i "s%http://www.junengcloud.com%$FRONT_DOMAIN%g" ./src/config/condition.js
+	sed -i "s%https://www.junengcloud.com%$FRONT_DOMAIN%g" ./src/config/condition.js
+fi
+if [ -n $FRONT_DOMAIN ]; then
+	sed -i "s%wss://www.junengcloud.com%$WS_DOMAIN%g" ./src/config/condition.js
+fi
+echo "---> Building application from source..."
+# Add build steps for your application, eg npm install, bundle install, pip install, etc.
+echo "---> Install components need..."
+npm install --registry https://registry.npm.taobao.org
+
+echo "---> Start build..."
+npm run build
+
+echo "---> Copy src to nginx default dir..."
+cp -Rf dist/* /usr/share/nginx/html/
