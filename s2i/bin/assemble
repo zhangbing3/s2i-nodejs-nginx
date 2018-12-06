@@ -21,14 +21,14 @@ fi
 
 echo "---> Installing application source..."
 cp -Rf /tmp/src/. ./
-if [ -n $FRONT_DOMAIN ]; then
-	echo "---> replace front-end domain ..."
-	sed -i "s%http://www.junengcloud.com%$FRONT_DOMAIN%g" ./src/config/condition.js
-	sed -i "s%https://www.junengcloud.com%$FRONT_DOMAIN%g" ./src/config/condition.js
-fi
-if [ -n $FRONT_DOMAIN ]; then
-	sed -i "s%wss://www.junengcloud.com%$WS_DOMAIN%g" ./src/config/condition.js
-fi
+# if [ -n $FRONT_DOMAIN ]; then
+# 	echo "---> replace front-end domain ..."
+# 	sed -i "s%http://www.junengcloud.com%$FRONT_DOMAIN%g" ./src/config/condition.js
+# 	sed -i "s%https://www.junengcloud.com%$FRONT_DOMAIN%g" ./src/config/condition.js
+# fi
+# if [ -n $FRONT_DOMAIN ]; then
+# 	sed -i "s%wss://www.junengcloud.com%$WS_DOMAIN%g" ./src/config/condition.js
+# fi
 echo "---> Building application from source..."
 # Add build steps for your application, eg npm install, bundle install, pip install, etc.
 echo "---> Install components need..."
