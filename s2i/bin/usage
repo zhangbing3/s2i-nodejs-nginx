@@ -1,6 +1,6 @@
 #!/bin/bash -e
 cat <<EOF
-This is the react-nginx-front-end-builder S2I image:
+This is the s2i-nodejs-nginx S2I image:
 To use it, install S2I: https://github.com/openshift/source-to-image
 
 Sample invocation:
