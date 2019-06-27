@@ -29,9 +29,9 @@
         }
       },
       {
-        "name": "9",
+        "name": "11",
         "annotations": {
-          "openshift.io/display-name": "s2i-nodejs-nginx 9",
+          "openshift.io/display-name": "s2i-nodejs-nginx 11",
           "openshift.io/provider-display-name": "zhangbing3",
           "description": "Build  vue or react project and run nginx applications on CentOS 7. For more information about using this builder image, including OpenShift considerations.",
           "iconClass": "icon-nodejs",
