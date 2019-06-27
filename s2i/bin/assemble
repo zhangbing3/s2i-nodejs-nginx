@@ -26,6 +26,7 @@ if [[ -n $NPM_REGISTRY ]]; then
 	echo "---> yarn set registry $NPM_REGISTRY"
 	yarn config set registry $NPM_REGISTRY
 fi
+yarn config set ignore-engines true
 echo "---> Building application from source..."
 # Add build steps for your application, eg npm install, bundle install, pip install, etc.
 echo "---> yarn Install components need..."

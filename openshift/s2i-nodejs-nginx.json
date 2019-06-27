@@ -22,7 +22,7 @@
         },
         "from": {
           "kind": "ImageStreamTag",
-          "name": "9"
+          "name": "11"
         },
         "referencePolicy": {
           "type": "Local"
@@ -36,7 +36,7 @@
           "description": "Build  vue or react project and run nginx applications on CentOS 7. For more information about using this builder image, including OpenShift considerations.",
           "iconClass": "icon-nodejs",
           "tags": "builder,nodejs",
-          "version": "9",
+          "version": "11",
           "sampleRepo": "https://github.com/openshift/nodejs-ex.git"
         },
         "from": {

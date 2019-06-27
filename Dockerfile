@@ -15,7 +15,7 @@ LABEL io.k8s.description="Platform for building vue or react App" \
       io.openshift.tags="builder,vue,nginx"
 
 RUN curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo
-RUN curl --silent --location https://rpm.nodesource.com/setup_9.x | bash -
+RUN curl --silent --location https://rpm.nodesource.com/setup_11.x | bash -
 RUN yum install -y yarn
 
 
